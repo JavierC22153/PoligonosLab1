@@ -15,6 +15,7 @@ fn main() {
     let color_white = Color::new(255, 255, 255);
     let color_yellow = Color::new(255, 255, 0);
     let color_blue = Color::new(0, 0, 255);
+    let color_red = Color::new(255, 0, 0);
 
     // Definición de polígonos
     let shape_1 = vec![
@@ -24,6 +25,10 @@ fn main() {
 
     let shape_2 = vec![
         [321, 335], [288, 286], [339, 251], [374, 302]
+    ];
+
+    let shape_3 = vec![
+        [377, 249], [411, 197], [436, 249]
     ];
 
     // Dibujar el primer polígono
@@ -37,6 +42,12 @@ fn main() {
     frame_buffer.draw_filled_polygon(shape_2.clone());
     frame_buffer.set_draw_color(color_white); // Bordes en blanco
     frame_buffer.draw_polygon(shape_2.clone());
+
+    // Dibujar el tercer polígono
+    frame_buffer.set_draw_color(color_red); // Relleno
+    frame_buffer.draw_filled_polygon(shape_3.clone());
+    frame_buffer.set_draw_color(color_white); // Bordes en blanco
+    frame_buffer.draw_polygon(shape_3.clone());
 
     // Guardar el buffer como un archivo BMP
     frame_buffer.save_as_bmp("output.bmp").unwrap();
