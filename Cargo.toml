@@ -1,0 +1,12 @@
+[package]
+name = "Laboratorio1GC"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[features]
+default = ["polygon-2", "polygon-3", "polygon-4"]
+polygon-2 = []
+polygon-3 = []
+polygon-4 = []
